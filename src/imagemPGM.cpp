@@ -1,9 +1,7 @@
 #include "imagemPGM.hpp"
 
 /**
-* @brief Le a imagem em formato ppm e salva nos atributos
-* 
-* @param imagem - Arquivo da imagem
+* @brief Escreve a imagem em formato pgm
 */
 void ImagemPGM::escrever(){
 

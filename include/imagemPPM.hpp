@@ -13,7 +13,6 @@ struct Pixel{
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
  * de uma imagem em formato .ppm.
- *
  */
 class ImagemPPM : public Imagem {
  public:

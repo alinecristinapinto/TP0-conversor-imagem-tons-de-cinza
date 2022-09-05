@@ -30,7 +30,6 @@ class Imagem {
 
   /**
    * @brief Destrutor da classe
-   *
    */
   virtual ~Imagem() = default;
 

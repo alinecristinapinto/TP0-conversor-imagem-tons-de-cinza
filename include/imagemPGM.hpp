@@ -6,7 +6,6 @@
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
  * de uma imagem em formato .pgm.
- *
  */
 class ImagemPGM : public Imagem {
  public:
