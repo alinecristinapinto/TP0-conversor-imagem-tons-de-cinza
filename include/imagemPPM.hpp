@@ -33,10 +33,8 @@ class ImagemPPM : public Imagem {
 
   /**
    * @brief Imprime PixMap
-   * 
-   * @param imagem - Arquivo da imagem
    */
-  void imprimirPixmap();
+  void imprimirMap() override; 
   
  private:
   /**

@@ -23,10 +23,10 @@ int main(int argc, char* argv[]) {
     imprimirOpcoes();
 
     FILE *imagem = fopen("img-samples/bolao.ppm", "r");
-    // erroAssert(imagem == NULL, "Erro na abertura do arquivo!");
+    erroAssert(!(imagem == NULL), "Erro na abertura do arquivo!");
 
     ImagemPPM ppm(imagem);
-    ppm.imprimirPixmap();
+    ppm.imprimirMap();
 
     fclose(imagem);
 

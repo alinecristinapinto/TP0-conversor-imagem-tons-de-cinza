@@ -16,7 +16,17 @@ class Imagem {
    * 
    * @param imagem - Arquivo da imagem
    */
-  virtual void ler(FILE *imagem) = 0;
+  virtual void ler(FILE *imagem) {};
+
+  /**
+   * @brief Escreve a imagem
+   */
+  virtual void escrever() {};
+
+  /**
+   * @brief Imprime o map da imagem
+   */
+  virtual void imprimirMap() = 0;
 
   /**
    * @brief Destrutor da classe
@@ -25,6 +35,11 @@ class Imagem {
   virtual ~Imagem() = default;
 
  protected:
+  /**
+   * @brief Tipo da imagem em ASCII. Ex: P1, P2 ou P3
+   */
+  char tipo[2];
+
   /**
    * @brief Altura da imagem 
    */
