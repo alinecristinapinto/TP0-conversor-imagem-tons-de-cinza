@@ -2,6 +2,7 @@
 #define IMAGEM_H
 
 #include <iostream>
+#include <fstream>
 #include "msgassert.hpp"
 
 /**
@@ -11,17 +12,17 @@
  */
 class Imagem {
  public:
-  /**
-   * @brief Le a imagem
-   * 
-   * @param imagem - Arquivo da imagem
-   */
-  virtual void ler(FILE *imagem) {};
+  // /**
+  //  * @brief Le a imagem
+  //  * 
+  //  * @param imagem - Arquivo da imagem
+  //  */
+  // virtual void ler(FILE *imagem) {};
 
-  /**
-   * @brief Escreve a imagem
-   */
-  virtual void escrever() {};
+  // /**
+  //  * @brief Escreve a imagem
+  //  */
+  // virtual void escrever() {};
 
   /**
    * @brief Imprime o map da imagem

@@ -14,7 +14,7 @@ class ImagemPGM : public Imagem {
    * 
    * @param imagem - Arquivo da imagem
    */
-  void escrever() override;
+  void escrever();
 
   /**
    * @brief Imprime GrayMap
