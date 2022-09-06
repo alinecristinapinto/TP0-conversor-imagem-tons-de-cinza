@@ -12,9 +12,16 @@ class ImagemPGM : public Imagem {
   /**
    * @brief Escreve a imagem em formato pgm
    * 
-   * @param imagem - Arquivo da imagem
+   * @param nome_imagem - Nome da imagem
    */
-  void escrever();
+  void escrever(std::string nome_imagem);
+
+  /**
+   * @brief Converte uma imagem ppm para o formato pgm
+   * 
+   * @param nome_imagem - Nome da imagem
+   */
+  void converterDePixMap(int altura, int largura, Pixel **pixmap);
 
   /**
    * @brief Imprime GrayMap

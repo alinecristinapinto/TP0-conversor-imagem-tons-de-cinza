@@ -8,6 +8,7 @@
 
 #include "msgassert.hpp" 
 #include "imagemPPM.hpp" 
+#include "imagemGM.hpp" 
 
 using namespace std;
 
@@ -25,6 +26,10 @@ int main(int argc, char* argv[]) {
     ImagemPPM ppm;
     ppm.ler("img-samples/bolao.ppm");
     ppm.imprimirMap();
+
+    ImagemPPM pgm;
+    pgm.escrever("img-samples/balao-convertido.pgm");
+    pgm.imprimirMap();
 
     return 0;
 }
