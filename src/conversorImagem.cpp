@@ -1,26 +1,26 @@
 #include "conversorImagem.hpp"
 
 ImagemPGM* ConversorImagem::converterImagemPPMParaPGM(const ImagemPPM& imagemPPM){
-  Pixel** aux_pixmap = imagemPPM.getPixMap();
-  TomCinza** aux_graymap;
+  Pixel** pixmap = imagemPPM.getPixMap();
+  int** graymap;
 
   // Aloca memoria para graymap 
-  aux_graymap = new struct TomCinza*[imagemPPM.getAltura()];
-  erroAssert(!(aux_graymap == NULL), "Erro ao alocar memoria para GrayMap!");
+  graymap = new int*[imagemPPM.getAltura()];
+  erroAssert(!(graymap == NULL), "Erro ao alocar memoria para GrayMap!");
 
   for (int i = 0; i < imagemPPM.getAltura(); i++) {
-    aux_graymap[i] = new struct TomCinza[imagemPPM.getLargura()];
-    erroAssert(!(aux_graymap[i] == NULL), "Erro ao alocar memoria para GrayMap!");
+    graymap[i] = new int[imagemPPM.getLargura()];
+    erroAssert(!(graymap[i] == NULL), "Erro ao alocar memoria para GrayMap!");
   }
 
   // Preenche valores no graymap
   for (int i = 0; i < imagemPPM.getAltura(); i++) {
     for (int j = 0; j < imagemPPM.getLargura(); j++) {
-      aux_graymap[i][j].valor = (49/255) * (0.3 * aux_pixmap[i][j].r +
-      							   0.59 * aux_pixmap[i][j].g +
-      							   0.11 * aux_pixmap[i][j].b);
+      double tom = (49.0 / 255.0) * 
+                   (0.3 * pixmap[i][j].r + 0.59 * pixmap[i][j].g + 0.11 * pixmap[i][j].b);
+      graymap[i][j] = int(tom);
     }
   }
 
-  return new ImagemPGM(imagemPPM.getAltura(), imagemPPM.getLargura(), aux_graymap);
+  return new ImagemPGM(imagemPPM.getAltura(), imagemPPM.getLargura(), graymap);
 }

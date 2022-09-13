@@ -21,7 +21,7 @@ class ImagemPGM : public Imagem {
    * @param largura Largura da imagem
    * @param graymap Matriz de tons de cinza
    */
-  ImagemPGM(int altura, int largura, TomCinza** graymap);
+  ImagemPGM(int altura, int largura, int** graymap);
 
   /**
    * @brief Escreve a imagem em formato pgm
@@ -44,7 +44,7 @@ class ImagemPGM : public Imagem {
   /**
    * @brief Matriz para GrayMap
    */
-  TomCinza** graymap;
+  int** graymap;
 };
 
 #endif

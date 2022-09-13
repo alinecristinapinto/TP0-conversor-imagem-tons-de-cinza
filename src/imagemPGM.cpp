@@ -2,9 +2,10 @@
 
 ImagemPGM::ImagemPGM(){
   this->tipo = TIPO_ASCII_PGM;
+  this->valor_maximo = VALOR_MAXIMO_TOM_CINZA_PGM;
 }
 
-ImagemPGM::ImagemPGM(int altura, int largura, TomCinza** graymap){
+ImagemPGM::ImagemPGM(int altura, int largura, int** graymap){
   this->tipo = TIPO_ASCII_PGM;
   this->altura = altura;
   this->largura = largura;
@@ -25,7 +26,7 @@ void ImagemPGM::imprimirMap(){
   std::cout << " largura " << this->largura  << std::endl;
   for (int i = 0; i < this->altura; i++) {
     for (int j = 0; j < this->largura; j++) {
-      std::cout << this->graymap[i][j].valor << " ";
+      std::cout << this->graymap[i][j] << " ";
     }
     std::cout << std::endl;
   }
