@@ -12,10 +12,10 @@ class ConversorImagem {
   /**
    * @brief Converte uma imagem .ppm para .pgm
    * 
-   * @param imagemPPM Imagem .ppm que será convertida
-   * @return ImagemPGM* Imagem .pgm
+   * @param imagemPPM Imagem em formato .ppm que será convertida
+   * @return ImagemPGM* Imagem em formato .pgm
    */
-  ImagemPGM* converterImagemPPMParaPGM(const Imagem& imagemPPM);
+  ImagemPGM* converterImagemPPMParaPGM(const ImagemPPM& imagemPPM);
 };
 
 #endif

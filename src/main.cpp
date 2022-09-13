@@ -24,14 +24,13 @@ void imprimirOpcoes(){
 int main(int argc, char* argv[]) {
     imprimirOpcoes();
 
-    ImagemPPM ppm;
-    ppm.ler("img-samples/bolao.ppm");
-    // ppm.imprimirMap();
+    ImagemPPM* ppm = new ImagemPPM();
+    ppm->ler("img-samples/bolao.ppm");
+    // ppm->imprimirMap();
 
     ConversorImagem conversor;
-    ImagemPGM* pgm = conversor.converterImagemPPMParaPGM(ppm);
+    ImagemPGM* pgm = conversor.converterImagemPPMParaPGM(*ppm);
   
-    // pgm.converterDePixMap(ppm);
     // pgm->escrever("img-samples/balao-convertido.pgm");
     pgm->imprimirMap();
 

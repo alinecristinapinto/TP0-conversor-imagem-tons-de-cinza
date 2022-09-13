@@ -32,6 +32,20 @@ class Imagem {
   //  */
   // virtual void escrever() {};
 
+  /*
+   * @brief Retorna altura da imagem
+   * 
+   * @return int Altura da imagem
+   */
+  int getAltura() const { return this->altura; }
+
+  /*
+   * @brief Retorna largura da imagem
+   * 
+   * @return int Largura da imagem
+   */
+  int getLargura() const { return this->largura; }
+
   /**
    * @brief Imprime o map da imagem
    */

@@ -1,6 +1,6 @@
 #include "conversorImagem.hpp"
 
-ImagemPGM* ConversorImagem::converterImagemPPMParaPGM(const Imagem& imagemPPM){
+ImagemPGM* ConversorImagem::converterImagemPPMParaPGM(const ImagemPPM& imagemPPM){
   // ImagemPGM* imagemPGM = new ImagemPGM(imagemPPM.altura, imagemPPM.largura);
 
   // // Aloca memoria para graymap 
@@ -21,5 +21,5 @@ ImagemPGM* ConversorImagem::converterImagemPPMParaPGM(const Imagem& imagemPPM){
   //   }
   // }
 
-  return new ImagemPGM(600, 500);
+  return new ImagemPGM(imagemPPM.getAltura(), imagemPPM.getLargura());
 }

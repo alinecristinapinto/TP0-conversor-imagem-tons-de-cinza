@@ -1,5 +1,9 @@
 #include "imagemPPM.hpp"
 
+ImagemPPM::ImagemPPM(){
+  this->tipo = TIPO_ASCII_PPM;
+}
+
 void ImagemPPM::ler(std::string nome_imagem){
   std::ifstream imagem(nome_imagem);
   erroAssert(imagem, "Erro na abertura do arquivo!");
@@ -25,6 +29,10 @@ void ImagemPPM::ler(std::string nome_imagem){
 
   imagem.close();
 };
+
+Pixel** ImagemPPM::getPixMap(){
+  return this->pixmap;
+}
 
 void ImagemPPM::imprimirMap(){
   for (int i = 0; i < this->altura; i++) {

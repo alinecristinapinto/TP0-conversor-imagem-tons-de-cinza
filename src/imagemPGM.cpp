@@ -20,8 +20,8 @@ void ImagemPGM::escrever(std::string nome_imagem){
 };
 
 void ImagemPGM::imprimirMap(){
-  std::cout << " ola " << std::endl;
-  std::cout << this->altura  << std::endl;
+  std::cout << " altura " << this->altura  << std::endl;
+  std::cout << " largura " << this->largura  << std::endl;
   // for (int i = 0; i < this->altura; i++) {
   //   for (int j = 0; j < this->largura; j++) {
   //     std::cout << this->graymap[i][j] << " ";

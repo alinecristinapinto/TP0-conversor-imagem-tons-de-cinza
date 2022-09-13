@@ -10,23 +10,33 @@
 class ImagemPPM : public Imagem {
  public:
   /**
+   * @brief Construtor default
+   */
+  ImagemPPM();
+
+  /**
    * @brief Le a imagem em formato ppm
    * 
    * @param nome_imagem - Nome da imagem
    */
   void ler(std::string nome_imagem);
 
-  // *
-  //  * @brief Retorna pixmap da imagem .ppm
-  //  * 
-  //  * @return Pixel** Matriz de pixmap
-   
-  // Pixel** getPixMap();
+  /*
+   * @brief Retorna pixmap da imagem .ppm
+   * 
+   * @return Pixel** Matriz de pixmap
+   */
+  Pixel** getPixMap();
 
   /**
    * @brief Imprime PixMap
    */
   void imprimirMap() override; 
+
+  /**
+   * @brief Destrutor da classe
+   */
+  virtual ~ImagemPPM() = default;
   
  private:
   /**

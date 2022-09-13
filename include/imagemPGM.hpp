@@ -33,6 +33,11 @@ class ImagemPGM : public Imagem {
    * @brief Imprime GrayMap
    */
   void imprimirMap() override;
+
+  /**
+   * @brief Destrutor da classe
+   */
+  virtual ~ImagemPGM() = default;
   
  private:
   /**
