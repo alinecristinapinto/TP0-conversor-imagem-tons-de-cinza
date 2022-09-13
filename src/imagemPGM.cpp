@@ -4,10 +4,11 @@ ImagemPGM::ImagemPGM(){
   this->tipo = TIPO_ASCII_PGM;
 }
 
-ImagemPGM::ImagemPGM(int altura, int largura){
+ImagemPGM::ImagemPGM(int altura, int largura, TomCinza** graymap){
   this->tipo = TIPO_ASCII_PGM;
   this->altura = altura;
   this->largura = largura;
+  this->graymap = graymap;
 }
 
 void ImagemPGM::escrever(std::string nome_imagem){
@@ -22,11 +23,11 @@ void ImagemPGM::escrever(std::string nome_imagem){
 void ImagemPGM::imprimirMap(){
   std::cout << " altura " << this->altura  << std::endl;
   std::cout << " largura " << this->largura  << std::endl;
-  // for (int i = 0; i < this->altura; i++) {
-  //   for (int j = 0; j < this->largura; j++) {
-  //     std::cout << this->graymap[i][j] << " ";
-  //   }
-  //   std::cout << std::endl;
-  // }
+  for (int i = 0; i < this->altura; i++) {
+    for (int j = 0; j < this->largura; j++) {
+      std::cout << this->graymap[i][j].valor << " ";
+    }
+    std::cout << std::endl;
+  }
 }
 

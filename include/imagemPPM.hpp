@@ -26,7 +26,7 @@ class ImagemPPM : public Imagem {
    * 
    * @return Pixel** Matriz de pixmap
    */
-  Pixel** getPixMap();
+  Pixel** getPixMap() const;
 
   /**
    * @brief Imprime PixMap

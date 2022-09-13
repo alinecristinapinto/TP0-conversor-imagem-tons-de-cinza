@@ -7,13 +7,6 @@
 #include "msgassert.hpp"
 
 /**
- * @brief Representacao do RGB em pixels
- */
-struct Pixel{
-  int r, g, b;
-};
-
-/**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
  * de uma imagem.
  *

@@ -30,7 +30,7 @@ void ImagemPPM::ler(std::string nome_imagem){
   imagem.close();
 };
 
-Pixel** ImagemPPM::getPixMap(){
+Pixel** ImagemPPM::getPixMap() const {
   return this->pixmap;
 }
 
