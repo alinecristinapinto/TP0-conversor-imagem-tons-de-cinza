@@ -29,7 +29,7 @@ class ImagemPPM : public Imagem {
   Pixel** getPixMap() const;
 
   /**
-   * @brief Imprime PixMap
+   * @brief [DEBUG] Imprime PixMap
    */
   void imprimirMap() override; 
 

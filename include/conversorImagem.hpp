@@ -16,6 +16,11 @@ class ConversorImagem {
    * @return ImagemPGM* Imagem em formato .pgm
    */
   ImagemPGM* converterImagemPPMParaPGM(const ImagemPPM& imagemPPM);
+
+  /**
+   * @brief Destrutor da classe
+   */
+  virtual ~ConversorImagem() = default;
 };
 
 #endif

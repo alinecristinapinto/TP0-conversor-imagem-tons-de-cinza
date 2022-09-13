@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
     ConversorImagem conversor;
     ImagemPGM* pgm = conversor.converterImagemPPMParaPGM(*ppm);
   
-    // pgm->escrever("img-samples/balao-convertido.pgm");
+    pgm->escrever("img-samples/balao-convertido.pgm");
     pgm->imprimirMap();
 
     return 0;

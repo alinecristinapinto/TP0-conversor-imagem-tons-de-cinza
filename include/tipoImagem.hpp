@@ -6,6 +6,8 @@
 const std::string TIPO_ASCII_PGM = "P2";
 const std::string TIPO_ASCII_PPM = "P3";
 
+const std::string FORMATO_PGM = ".pgm";
+
 const int VALOR_MAXIMO_TOM_CINZA_PGM = 49;
 
 /**

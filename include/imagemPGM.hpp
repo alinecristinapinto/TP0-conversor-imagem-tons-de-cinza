@@ -31,7 +31,7 @@ class ImagemPGM : public Imagem {
   void escrever(std::string nome_imagem);
 
   /**
-   * @brief Imprime GrayMap
+   * @brief [DEBUG] Imprime GrayMap
    */
   void imprimirMap() override;
 
