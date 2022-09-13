@@ -16,6 +16,13 @@ class ImagemPPM : public Imagem {
    */
   void ler(std::string nome_imagem);
 
+  // *
+  //  * @brief Retorna pixmap da imagem .ppm
+  //  * 
+  //  * @return Pixel** Matriz de pixmap
+   
+  // Pixel** getPixMap();
+
   /**
    * @brief Imprime PixMap
    */

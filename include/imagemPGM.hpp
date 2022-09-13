@@ -10,18 +10,24 @@
 class ImagemPGM : public Imagem {
  public:
   /**
+   * @brief Construtor default
+   */
+  ImagemPGM();
+
+  /**
+   * @brief Construtor que inicializa algumas variaveis da classe.
+   *
+   * @param altura Altura da imagem
+   * @param largura Largura da imagem
+   */
+  ImagemPGM(int altura, int largura);
+
+  /**
    * @brief Escreve a imagem em formato pgm
    * 
    * @param nome_imagem - Nome da imagem
    */
   void escrever(std::string nome_imagem);
-
-  /**
-   * @brief Converte uma imagem ppm para o formato pgm
-   * 
-   * @param nome_imagem - Nome da imagem
-   */
-  void converterDePixMap(int altura, int largura, Pixel **pixmap);
 
   /**
    * @brief Imprime GrayMap

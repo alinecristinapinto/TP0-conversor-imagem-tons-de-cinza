@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include "tipoImagem.hpp"
 #include "msgassert.hpp"
 
 /**
@@ -45,7 +46,7 @@ class Imagem {
   /**
    * @brief Tipo da imagem em ASCII. Ex: P1, P2 ou P3
    */
-  char tipo[2];
+  std::string tipo;
 
   /**
    * @brief Altura da imagem 
