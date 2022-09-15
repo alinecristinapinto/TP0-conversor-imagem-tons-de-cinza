@@ -5,34 +5,32 @@
 //---------------------------------------------------------------------
 
 #include <iostream>
+#include <getopt.h>
 
-#include "msgassert.hpp" 
 #include "imagemPPM.hpp" 
 #include "imagemPGM.hpp" 
 #include "conversorImagem.hpp"
 
+#include "constantesTerminal.hpp"
+#include "msgassert.h" 
+#include "memlog.h"
+
 using namespace std;
 
-void imprimirOpcoes(){
-    cout << "\t Conversor de imagem para tons de cinza" << endl;
-    cout << "-i <nome_do_arquivo_entrada> - (entrada em formato .ppm)" << endl;
-    cout << "-o <nome_do_arquivo_saida> - (entrada em formato .pgm)" << endl;
-    cout << "-p - registro de desempenho" << endl;
-    cout << "-l - padrão de acesso e localidade" << endl;
+void parse_args(int argc, char* argv[]) {
+    cout << *argv << endl;
 }
 
 int main(int argc, char* argv[]) {
-    imprimirOpcoes();
+    parse_args(argc, argv);
 
     ImagemPPM* ppm = new ImagemPPM();
     ppm->ler("img-samples/bolao.ppm");
-    // ppm->imprimirMap();
 
     ConversorImagem conversor;
     ImagemPGM* pgm = conversor.converterImagemPPMParaPGM(*ppm);
   
     pgm->escrever("img-samples/balao-convertido.pgm");
-    pgm->imprimirMap();
 
     return 0;
 }
