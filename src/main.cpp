@@ -11,8 +11,8 @@
 #include "conversorImagem.hpp"
 #include "leitorLinhaComando.hpp"
 
-#include "msgassert.h" 
 #include "memlog.h"
+#include "msgassert.h" 
 
 using namespace std;
 
@@ -26,12 +26,12 @@ int main(int argc, char* argv[]) {
     iniciaMemLog(nome_log);
 
     ImagemPPM* ppm = new ImagemPPM();
-    ppm->ler("img-samples/bolao.ppm");
+    ppm->ler(nome_imagem_entrada);
 
     ConversorImagem conversor;
     ImagemPGM* pgm = conversor.converterImagemPPMParaPGM(*ppm);
   
-    pgm->escrever("img-samples/balao-convertido.pgm");
+    pgm->escrever(nome_imagem_saida);
 
     return 0;
 }
