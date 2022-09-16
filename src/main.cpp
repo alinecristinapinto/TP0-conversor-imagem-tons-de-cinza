@@ -22,6 +22,9 @@ int main(int argc, char* argv[]) {
     string nome_imagem_entrada = linha_comando.buscar_nome_imagem_entrada(argc, argv);
     string nome_imagem_saida = linha_comando.buscar_nome_imagem_saida(argc, argv); 
 
+    char nome_log[20] = "log.out";
+    iniciaMemLog(nome_log);
+
     ImagemPPM* ppm = new ImagemPPM();
     ppm->ler("img-samples/bolao.ppm");
 
