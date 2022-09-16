@@ -8,6 +8,7 @@ std::string LeitorLinhaComando::buscar_argumento(int argc, char* argv[], std::st
     for(int i=0; i<argc; i++){
         if(argv[i] == opcao && (i+1)< argc) {
             argumento = argv[i + 1];
+            return argumento;
         }; 
     }
 
@@ -15,16 +16,15 @@ std::string LeitorLinhaComando::buscar_argumento(int argc, char* argv[], std::st
 }
 
 std::string LeitorLinhaComando::buscar_nome_imagem_entrada(int argc, char* argv[]) {
-    std::cout << argc << std::endl;
-    std::cout << *argv << std::endl;
+    std::string entrada = buscar_argumento(argc, argv, I_NOME_ARQUIVO_ENTRADA);
+    erroAssert(entrada != "", "Nome do arquivo de entrada obrigatorio!");
 
-    for(int i=0; i<argc; i++){
-        if(argv[i] == I_NOME_ARQUIVO_ENTRADA) return argv[i + 1]; 
-    }
-
-    return "";
+    return entrada;
 }
 
 std::string LeitorLinhaComando::buscar_nome_imagem_saida(int argc, char* argv[]) {
-    return "";
+    std::string saida = buscar_argumento(argc, argv, O_NOME_ARQUIVO_SAIDA);
+    erroAssert(saida != "", "Nome do arquivo de saida obrigatorio!");
+
+    return saida;
 }
