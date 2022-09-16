@@ -2,6 +2,7 @@
 #define IMAGEM_H
 
 #include <iostream>
+#include <string>
 #include <fstream>
 #include "tipoImagem.hpp"
 #include "msgassert.h"

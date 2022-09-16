@@ -5,24 +5,22 @@
 //---------------------------------------------------------------------
 
 #include <iostream>
-#include <getopt.h>
 
 #include "imagemPPM.hpp" 
 #include "imagemPGM.hpp" 
 #include "conversorImagem.hpp"
+#include "leitorLinhaComando.hpp"
 
-#include "constantesTerminal.hpp"
 #include "msgassert.h" 
 #include "memlog.h"
 
 using namespace std;
 
-void parse_args(int argc, char* argv[]) {
-    cout << *argv << endl;
-}
-
 int main(int argc, char* argv[]) {
-    parse_args(argc, argv);
+    LeitorLinhaComando linha_comando;
+
+    string nome_imagem_entrada = linha_comando.buscar_nome_imagem_entrada(argc, argv);
+    string nome_imagem_saida = linha_comando.buscar_nome_imagem_saida(argc, argv); 
 
     ImagemPPM* ppm = new ImagemPPM();
     ppm->ler("img-samples/bolao.ppm");
