@@ -24,7 +24,7 @@ int main(int argc, char* argv[]) {
     string nome_memlog = linha_comando.buscar_nome_memlog(argc, argv); 
     bool ativar_registro_acesso = linha_comando.verificar_registro_acesso(argc, argv); 
 
-    iniciaMemLog((char * ) nome_memlog.c_str());
+    iniciaMemLog((char *) nome_memlog.c_str());
 
     if (ativar_registro_acesso){ 
         ativaMemLog();
@@ -32,13 +32,18 @@ int main(int argc, char* argv[]) {
         desativaMemLog();
     }
 
+    defineFaseMemLog(0);
     ImagemPPM* ppm = new ImagemPPM();
     ppm->ler(nome_imagem_entrada);
 
+    defineFaseMemLog(1);
     ConversorImagem conversor;
     ImagemPGM* pgm = conversor.converterImagemPPMParaPGM(*ppm);
   
+    defineFaseMemLog(2);
     pgm->escrever(nome_imagem_saida);
 
+    delete ppm;
+    delete pgm;
     return finalizaMemLog();
 }
