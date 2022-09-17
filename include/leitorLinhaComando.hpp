@@ -30,16 +30,44 @@ class LeitorLinhaComando {
    */
   static std::string buscar_nome_imagem_saida(int argc, char* argv[]);
 
+  /**
+   * @brief Retorna nome do arquivo para memlog
+   * 
+   * @param argc Numero de parametros
+   * @param argv String com comando digitado
+   * @return string Nome do arquivo de log
+   */
+  static std::string buscar_nome_memlog(int argc, char* argv[]);
+
+  /**
+   * @brief Retorna se devem ser registrados os acessos a memoria ou apenas o tempo de execucao.
+   * 
+   * @param argc Numero de parametros
+   * @param argv String com comando digitado
+   * @return bool registro de acesso a memoria
+   */
+  static bool verificar_registro_acesso(int argc, char* argv[]);
+
   private:
   /**
    * @brief Retorna argumento do terminal baseado na opcao passada
    * 
    * @param argc Numero de parametros
    * @param argv String com comando digitado
-   * @param opcao Opcao de uso ex: -i, -l, -o
+   * @param opcao Opcao de uso ex: -i, -p, -o
    * @return string Argumento do terminal referente a opcao
    */
   static std::string buscar_argumento(int argc, char* argv[], std::string opcao); 
+
+  /**
+   * @brief Retorna se parametro se encontra no comando recebido
+   * 
+   * @param argc Numero de parametros
+   * @param argv String com comando digitado
+   * @param parametro Opcao de uso ex: -i, -l, -o
+   * @return bool verdadeiro/falso para presenca de parametro no comando
+   */
+  static bool verificar_parametro_presente(int argc, char* argv[], std::string parametro); 
 
 };
 

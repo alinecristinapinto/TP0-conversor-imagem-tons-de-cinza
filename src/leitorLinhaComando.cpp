@@ -13,6 +13,14 @@ std::string LeitorLinhaComando::buscar_argumento(int argc, char* argv[], std::st
     return argumento;
 }
 
+bool LeitorLinhaComando::verificar_parametro_presente(int argc, char* argv[], std::string parametro){
+    for(int i=0; i<argc; i++){
+        if(argv[i] == parametro) return true;
+    }
+
+    return false;
+}
+
 std::string LeitorLinhaComando::buscar_nome_imagem_entrada(int argc, char* argv[]) {
     std::string entrada = buscar_argumento(argc, argv, I_NOME_ARQUIVO_ENTRADA);
     erroAssert(entrada != "", "Nome do arquivo de entrada obrigatorio!");
@@ -25,4 +33,15 @@ std::string LeitorLinhaComando::buscar_nome_imagem_saida(int argc, char* argv[])
     erroAssert(saida != "", "Nome do arquivo de saida obrigatorio!");
 
     return saida;
+}
+
+std::string LeitorLinhaComando::buscar_nome_memlog(int argc, char* argv[]){
+    std::string registro = buscar_argumento(argc, argv, P_REGISTRO_DESEMPENHO);
+    erroAssert(registro != "", "Nome do arquivo para registro de desemprenho obrigatorio!");
+
+    return registro;
+}
+
+bool LeitorLinhaComando::verificar_registro_acesso(int argc, char* argv[]){
+    return verificar_parametro_presente(argc, argv, L_PADRAO_ACESSO_LOCALIDADE);
 }

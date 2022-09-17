@@ -21,9 +21,16 @@ int main(int argc, char* argv[]) {
 
     string nome_imagem_entrada = linha_comando.buscar_nome_imagem_entrada(argc, argv);
     string nome_imagem_saida = linha_comando.buscar_nome_imagem_saida(argc, argv); 
+    string nome_memlog = linha_comando.buscar_nome_memlog(argc, argv); 
+    bool ativar_registro_acesso = linha_comando.verificar_registro_acesso(argc, argv); 
 
-    string nome_memlog = "log.out";
     iniciaMemLog((char * ) nome_memlog.c_str());
+
+    if (ativar_registro_acesso){ 
+        ativaMemLog();
+    } else {
+        desativaMemLog();
+    }
 
     ImagemPPM* ppm = new ImagemPPM();
     ppm->ler(nome_imagem_entrada);
