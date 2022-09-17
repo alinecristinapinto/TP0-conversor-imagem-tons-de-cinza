@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "msgassert.h" 
+#include "msgassert.hpp" 
 
 const std::string I_NOME_ARQUIVO_ENTRADA = "-i";
 const std::string O_NOME_ARQUIVO_SAIDA = "-o";

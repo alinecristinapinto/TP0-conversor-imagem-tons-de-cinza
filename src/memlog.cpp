@@ -14,8 +14,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <errno.h>
-#include "memlog.h"
-#include "msgassert.h"
+#include "memlog.hpp"
+#include "msgassert.hpp"
 
 // variavel estatica de registro de acessos
 memlog_tipo ml;
@@ -173,4 +173,3 @@ int finalizaMemLog()
   ml.ativo = MLINATIVO;
   return result;
 }
-

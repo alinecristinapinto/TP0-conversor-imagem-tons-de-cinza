@@ -6,13 +6,13 @@
 
 #include <iostream>
 
+#include "memlog.hpp"
+#include "msgassert.hpp" 
+
 #include "imagemPPM.hpp" 
 #include "imagemPGM.hpp" 
 #include "conversorImagem.hpp"
 #include "leitorLinhaComando.hpp"
-
-#include "memlog.h"
-#include "msgassert.h" 
 
 using namespace std;
 
@@ -22,8 +22,8 @@ int main(int argc, char* argv[]) {
     string nome_imagem_entrada = linha_comando.buscar_nome_imagem_entrada(argc, argv);
     string nome_imagem_saida = linha_comando.buscar_nome_imagem_saida(argc, argv); 
 
-    char nome_log[20] = "log.out";
-    iniciaMemLog(nome_log);
+    string nome_memlog = "log.out";
+    iniciaMemLog((char * ) nome_memlog.c_str());
 
     ImagemPPM* ppm = new ImagemPPM();
     ppm->ler(nome_imagem_entrada);
@@ -33,5 +33,5 @@ int main(int argc, char* argv[]) {
   
     pgm->escrever(nome_imagem_saida);
 
-    return 0;
+    return finalizaMemLog();
 }

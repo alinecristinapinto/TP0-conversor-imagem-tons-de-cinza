@@ -1,7 +1,5 @@
 #include "leitorLinhaComando.hpp"
 
-#include <iostream>
-
 std::string LeitorLinhaComando::buscar_argumento(int argc, char* argv[], std::string opcao) {
     std::string argumento = "";
 

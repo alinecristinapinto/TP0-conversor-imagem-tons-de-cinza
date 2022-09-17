@@ -5,7 +5,7 @@
 #include <string>
 #include <fstream>
 #include "tipoImagem.hpp"
-#include "msgassert.h"
+#include "msgassert.hpp"
 
 /**
  * @brief Classe responsavel pelo armazenamento e gerenciamento das informacoes
