@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include "tipoImagem.hpp"
+#include "memlog.hpp"
 #include "msgassert.hpp"
 
 /**

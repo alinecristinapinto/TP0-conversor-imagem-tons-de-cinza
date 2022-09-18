@@ -16,7 +16,7 @@ ImagemPGM::ImagemPGM(int altura, int largura, int** graymap){
 void ImagemPGM::escrever(std::string nome_imagem){
   std::ofstream imagem;
   imagem.open(nome_imagem + FORMATO_PGM);
-  erroAssert(imagem, "Erro na criacao do arquivo!");
+  erroAssert(imagem.is_open(), "Erro ao criar arquivo pgm!");
 
   imagem << this->tipo << std::endl; 
   imagem << this->largura << " " << this->altura << std::endl;
@@ -26,6 +26,8 @@ void ImagemPGM::escrever(std::string nome_imagem){
     for(int j=0; j<this->largura; j++){
       if(j == this->largura - 1) imagem << this->graymap[i][j] << std::endl;
       else imagem << this->graymap[i][j] << " ";
+
+      LEMEMLOG((long int) &this->graymap[i][j], sizeof (int), 2);
     }
   }
 

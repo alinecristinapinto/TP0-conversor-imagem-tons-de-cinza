@@ -21,6 +21,15 @@ class ConversorImagem {
    * @brief Destrutor da classe
    */
   virtual ~ConversorImagem() = default;
+
+  private:
+  /**
+   * @brief Converte pixel em tom de cinza
+   * 
+   * @param pixel Pixel em forato rgb
+   * @return int Tom de cinza convertido
+   */
+  static int converterPixelParaTomCinza(Pixel pixel);
 };
 
 #endif

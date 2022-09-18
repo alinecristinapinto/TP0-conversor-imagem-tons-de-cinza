@@ -6,7 +6,7 @@ ImagemPPM::ImagemPPM(){
 
 void ImagemPPM::ler(std::string nome_imagem){
   std::ifstream imagem(nome_imagem);
-  erroAssert(imagem, "Erro na abertura do arquivo!");
+  erroAssert(imagem.is_open(), "Erro ao ler arquivo de entrada!");
 
   // Le header (3 primeiras linhas) e inicializa tipo, altura, largura e valor maximo
   imagem >> this->tipo >> this->largura >> this->altura >> this->valor_maximo;
@@ -24,6 +24,10 @@ void ImagemPPM::ler(std::string nome_imagem){
   for (int i = 0; i < this->altura; i++) {
     for (int j = 0; j < this->largura; j++) {
       imagem >> this->pixmap[i][j].r >> this->pixmap[i][j].g >> this->pixmap[i][j].b;
+
+      ESCREVEMEMLOG((long int) &this->pixmap[i][j].r, sizeof (int), 0);
+      ESCREVEMEMLOG((long int) &this->pixmap[i][j].g, sizeof (int), 0);
+      ESCREVEMEMLOG((long int) &this->pixmap[i][j].b, sizeof (int), 0);
     }
   }
 
