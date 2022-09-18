@@ -25,9 +25,9 @@ void ImagemPPM::ler(std::string nome_imagem){
     for (int j = 0; j < this->largura; j++) {
       imagem >> this->pixmap[i][j].r >> this->pixmap[i][j].g >> this->pixmap[i][j].b;
 
-      ESCREVEMEMLOG((long int) &this->pixmap[i][j].r, sizeof (int), 0);
-      ESCREVEMEMLOG((long int) &this->pixmap[i][j].g, sizeof (int), 0);
-      ESCREVEMEMLOG((long int) &this->pixmap[i][j].b, sizeof (int), 0);
+      ESCREVEMEMLOG((long int) &this->pixmap[i][j].r, sizeof (int), MEMLOG_PPM);
+      ESCREVEMEMLOG((long int) &this->pixmap[i][j].g, sizeof (int), MEMLOG_PPM);
+      ESCREVEMEMLOG((long int) &this->pixmap[i][j].b, sizeof (int), MEMLOG_PPM);
     }
   }
 

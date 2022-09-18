@@ -5,9 +5,9 @@ int ConversorImagem::converterPixelParaTomCinza(Pixel pixel){
                (0.3 * pixel.r + 0.59 * pixel.g + 0.11 * pixel.b);
   erroAssert(!(tom > VALOR_MAXIMO_TOM_CINZA_PGM || tom < 0), "Tom de cinza invalido!");
 
-  LEMEMLOG((long int) &pixel.r, sizeof (int), 0);
-  LEMEMLOG((long int) &pixel.g, sizeof (int), 0);
-  LEMEMLOG((long int) &pixel.b, sizeof (int), 0);
+  LEMEMLOG((long int) &pixel.r, sizeof (int), MEMLOG_PPM);
+  LEMEMLOG((long int) &pixel.g, sizeof (int), MEMLOG_PPM);
+  LEMEMLOG((long int) &pixel.b, sizeof (int), MEMLOG_PPM);
 
   return int(tom);
 }
@@ -30,7 +30,7 @@ ImagemPGM* ConversorImagem::converterImagemPPMParaPGM(const ImagemPPM& imagemPPM
     for (int j = 0; j < imagemPPM.getLargura(); j++) {
       graymap[i][j] = converterPixelParaTomCinza(pixmap[i][j]);
       
-      ESCREVEMEMLOG((long int) &graymap[i][j], sizeof (int), 1);
+      ESCREVEMEMLOG((long int) &graymap[i][j], sizeof (int), MEMLOG_PGM);
     }
   }
 

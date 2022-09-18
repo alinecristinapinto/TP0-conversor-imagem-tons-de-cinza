@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include "tipoImagem.hpp"
+#include "constantes.hpp"
 #include "memlog.hpp"
 #include "msgassert.hpp"
 

@@ -27,7 +27,7 @@ void ImagemPGM::escrever(std::string nome_imagem){
       if(j == this->largura - 1) imagem << this->graymap[i][j] << std::endl;
       else imagem << this->graymap[i][j] << " ";
 
-      LEMEMLOG((long int) &this->graymap[i][j], sizeof (int), 2);
+      LEMEMLOG((long int) &this->graymap[i][j], sizeof (int), MEMLOG_PGM);
     }
   }
 

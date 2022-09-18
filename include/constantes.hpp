@@ -10,6 +10,9 @@ const std::string FORMATO_PGM = ".pgm";
 
 const int VALOR_MAXIMO_TOM_CINZA_PGM = 49;
 
+const int MEMLOG_PPM = 0;
+const int MEMLOG_PGM = 1;
+
 /**
  * @brief Representacao do RGB em pixels
  */
