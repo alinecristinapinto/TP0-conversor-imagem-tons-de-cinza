@@ -1,16 +1,28 @@
 #include "imagemPGM.hpp"
 
-ImagemPGM::ImagemPGM(){
-  this->tipo = TIPO_ASCII_PGM;
-  this->valor_maximo = VALOR_MAXIMO_TOM_CINZA_PGM;
-}
-
-ImagemPGM::ImagemPGM(int altura, int largura, int** graymap){
+ImagemPGM::ImagemPGM(int altura, int largura){
   this->tipo = TIPO_ASCII_PGM;
   this->altura = altura;
   this->largura = largura;
-  this->graymap = graymap;
   this->valor_maximo = VALOR_MAXIMO_TOM_CINZA_PGM;
+}
+
+void ImagemPGM::alocarAlturaGrayMap(){
+  this->graymap = new int*[this->altura];
+  erroAssert(!(graymap == NULL), "Erro ao alocar memoria para GrayMap!");
+}
+
+void ImagemPGM::alocarLarguraGrayMap(int i){
+  this->graymap[i] = new int[this->largura];
+  erroAssert(!(graymap[i] == NULL), "Erro ao alocar memoria para GrayMap!");
+}
+
+void ImagemPGM::setTom(int tom, int i, int j){
+  this->graymap[i][j] = tom;
+}
+
+int** ImagemPGM::getGrayMap() const {
+  return this->graymap;
 }
 
 void ImagemPGM::escrever(std::string nome_imagem){

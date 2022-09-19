@@ -24,7 +24,7 @@ class ConversorImagem {
    * @param pixel Pixel em forato rgb
    * @return int Tom de cinza convertido
    */
-  static int converterPixelParaTomCinza(Pixel pixel);
+  static int converterPixelParaTomCinza(const Pixel& pixel);
 };
 
 #endif

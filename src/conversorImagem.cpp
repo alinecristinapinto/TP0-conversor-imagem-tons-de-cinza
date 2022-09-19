@@ -1,6 +1,6 @@
 #include "conversorImagem.hpp"
 
-int ConversorImagem::converterPixelParaTomCinza(Pixel pixel){
+int ConversorImagem::converterPixelParaTomCinza(const Pixel& pixel){
   double tom = (49.0 / 255.0) * 
                (0.3 * pixel.r + 0.59 * pixel.g + 0.11 * pixel.b);
   erroAssert(!(tom > VALOR_MAXIMO_TOM_CINZA_PGM || tom < 0), "Tom de cinza invalido!");
@@ -9,27 +9,23 @@ int ConversorImagem::converterPixelParaTomCinza(Pixel pixel){
   LEMEMLOG((long int) &pixel.g, sizeof (int), MEMLOG_PPM_ID);
   LEMEMLOG((long int) &pixel.b, sizeof (int), MEMLOG_PPM_ID);
 
-  return int(tom);
+  return (int) tom;
 }
 
 ImagemPGM* ConversorImagem::converterImagemPPMParaPGM(const ImagemPPM& imagemPPM){
-  Pixel** pixmap = imagemPPM.getPixMap();
-  int** graymap;
+  ImagemPGM* pgm = new ImagemPGM(imagemPPM.getAltura(), imagemPPM.getLargura());
 
-  // Aloca memoria para graymap e preenche valores
-  graymap = new int*[imagemPPM.getAltura()];
-  erroAssert(!(graymap == NULL), "Erro ao alocar memoria para GrayMap!");
+  pgm->alocarAlturaGrayMap();
 
   for (int i = 0; i < imagemPPM.getAltura(); i++) {
-    graymap[i] = new int[imagemPPM.getLargura()];
-    erroAssert(!(graymap[i] == NULL), "Erro ao alocar memoria para GrayMap!");
-
+    pgm->alocarLarguraGrayMap(i);
+    
     for (int j = 0; j < imagemPPM.getLargura(); j++) {
-      graymap[i][j] = converterPixelParaTomCinza(pixmap[i][j]);
+      pgm->setTom(converterPixelParaTomCinza(imagemPPM.getPixMap()[i][j]), i, j);
       
-      ESCREVEMEMLOG((long int) &graymap[i][j], sizeof (int), MEMLOG_PGM_ID);
+      ESCREVEMEMLOG((long int) &pgm->getGrayMap()[i][j], sizeof (int), MEMLOG_PGM_ID);
     }
   }
 
-  return new ImagemPGM(imagemPPM.getAltura(), imagemPPM.getLargura(), graymap);
+  return pgm;
 }
