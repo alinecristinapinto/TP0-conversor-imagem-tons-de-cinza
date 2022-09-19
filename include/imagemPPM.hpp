@@ -29,11 +29,6 @@ class ImagemPPM : public Imagem {
   Pixel** getPixMap() const;
 
   /**
-   * @brief [DEBUG] Imprime PixMap
-   */
-  void imprimirMap() override; 
-
-  /**
    * @brief Destrutor da classe
    */
   virtual ~ImagemPPM() = default;

@@ -8,14 +8,14 @@ No diretório do projeto, executar:
 
 No qual:
 
--i  "nome do arquivo de entrada"  (entrada em formato .ppm)  
+`-i  "nome do arquivo de entrada"`  (entrada em formato .ppm)  
               
--o  "nome do arquivo de saída"    (saída em formato .pgm)
+`-o  "nome do arquivo de saída"`    (saída em formato .pgm)
 
--p  log.out            (registro de desempenho)
+`-p  log.out`            (registro de desempenho)
 
--l                     (padrão de acesso e localidade)
+`-l`                    (padrão de acesso e localidade)
 
-Exemplo de uso:
+#### Exemplo de uso:
 
 `./bin/run.out -i ./img-samples/bolao.ppm -o ./img-samples/balao-convertido.pgm -p log.out -l`

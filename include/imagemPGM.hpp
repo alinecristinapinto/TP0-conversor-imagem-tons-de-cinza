@@ -31,11 +31,6 @@ class ImagemPGM : public Imagem {
   void escrever(std::string nome_imagem);
 
   /**
-   * @brief [DEBUG] Imprime GrayMap
-   */
-  void imprimirMap() override;
-
-  /**
    * @brief Destrutor da classe
    */
   virtual ~ImagemPGM() = default;

@@ -10,6 +10,9 @@ const std::string O_NOME_ARQUIVO_SAIDA = "-o";
 const std::string P_REGISTRO_DESEMPENHO = "-p";
 const std::string L_PADRAO_ACESSO_LOCALIDADE = "-l";
 
+/**
+ * @brief Classe responsavel pela leitura dos dados por linha de comando
+ */
 class LeitorLinhaComando {
   public:
   /**

@@ -27,19 +27,9 @@ void ImagemPGM::escrever(std::string nome_imagem){
       if(j == this->largura - 1) imagem << this->graymap[i][j] << std::endl;
       else imagem << this->graymap[i][j] << " ";
 
-      LEMEMLOG((long int) &this->graymap[i][j], sizeof (int), MEMLOG_PGM);
+      LEMEMLOG((long int) &this->graymap[i][j], sizeof (int), MEMLOG_PGM_ID);
     }
   }
 
   imagem.close();
 };
-
-void ImagemPGM::imprimirMap(){
-  for (int i = 0; i < this->altura; i++) {
-    for (int j = 0; j < this->largura; j++) {
-      std::cout << this->graymap[i][j] << " ";
-    }
-    std::cout << std::endl;
-  }
-}
-

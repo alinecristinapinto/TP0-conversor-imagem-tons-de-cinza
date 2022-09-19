@@ -29,11 +29,6 @@ class Imagem {
   int getLargura() const { return this->largura; }
 
   /**
-   * @brief [DEBUG] Imprime o map da imagem
-   */
-  virtual void imprimirMap() = 0;
-
-  /**
    * @brief Destrutor da classe
    */
   virtual ~Imagem() = default;
